@@ -1,22 +1,24 @@
-# 画中杀境实战 Skill
+# 画中弈境
 
-面向《三国：谋定天下》画中杀境的 Codex 技能，整理了两次实战中的选牌算分、构筑决策、电脑操作和中断恢复经验，并附带独立的 Node.js 算分脚本。
+面向《三国：谋定天下》画中弈境的 Codex 技能，整理了两次实战中的选牌算分、构筑决策、电脑操作和中断恢复经验，并附带独立的 Node.js 算分脚本。
 
 ## 安装
 
-从本仓库的 [Releases](https://github.com/CharlesWang505/huazhong-shajing/releases) 下载 `huazhong-shajing-v1.0.0.zip`，解压后把整个 `huazhong-shajing` 文件夹放入个人技能目录：
+从本仓库的 [Releases](https://github.com/CharlesWang505/huazhong-yijing/releases) 下载 `huazhong-yijing-v1.0.1.zip`，解压后把整个 `huazhong-yijing` 文件夹放入个人技能目录：
 
 ```text
-Windows: %USERPROFILE%\.agents\skills\huazhong-shajing\
-macOS / Linux: ~/.agents/skills/huazhong-shajing/
+Windows: %USERPROFILE%\.agents\skills\huazhong-yijing\
+macOS / Linux: ~/.agents/skills/huazhong-yijing/
 ```
 
-也可以使用项目根目录下的 `.agents/skills/huazhong-shajing/`。确认该目录下直接包含 `SKILL.md`，并一起保留 `agents`、`references`、`scripts`。已有同名技能时先比较并保留自己的修改。
+也可以使用项目根目录下的 `.agents/skills/huazhong-yijing/`。确认该目录下直接包含 `SKILL.md`，并一起保留 `agents`、`references`、`scripts`。已有同名技能时先比较并保留自己的修改。
+
+从 v1.0.0 升级时，将旧的 `huazhong-shajing` 技能目录迁移为 `huazhong-yijing` 并更新内容，保留自己的修改，避免同时加载两份技能。
 
 Codex 未发现新技能时重启客户端，再开启对话使用：
 
 ```text
-使用 $huazhong-shajing，帮我分析画中杀境的当前手牌。
+使用 $huazhong-yijing，帮我分析画中弈境的当前手牌。
 ```
 
 完整安装与使用条件见 [分享说明](分享说明.md)。
@@ -35,22 +37,22 @@ Codex 未发现新技能时重启客户端，再开启对话使用：
 需要 Node.js，依赖均为内置模块，无需 `npm install`。以下命令在仓库根目录运行：
 
 ```powershell
-node ./huazhong-shajing/scripts/adviser.mjs --demo
-node ./huazhong-shajing/scripts/adviser.mjs --catalog
-node ./huazhong-shajing/scripts/adviser.mjs --input ./run-state.json
-node --test ./huazhong-shajing/scripts/adviser.test.mjs
+node ./huazhong-yijing/scripts/adviser.mjs --demo
+node ./huazhong-yijing/scripts/adviser.mjs --catalog
+node ./huazhong-yijing/scripts/adviser.mjs --input ./run-state.json
+node --test ./huazhong-yijing/scripts/adviser.test.mjs
 ```
 
-输入格式见 [SKILL.md](huazhong-shajing/SKILL.md)。输出的 `indices` 是当前手牌从左到右、从 1 开始的位置；重复牌按位置区分。脚本预测当前单手分数，不预测随机抽牌或整关最优策略，也不会自动操作游戏。
+输入格式见 [SKILL.md](huazhong-yijing/SKILL.md)。输出的 `indices` 是当前手牌从左到右、从 1 开始的位置；重复牌按位置区分。脚本预测当前单手分数，不预测随机抽牌或整关最优策略，也不会自动操作游戏。
 
 ## 资料
 
 | 文件 | 内容 |
 |---|---|
-| [SKILL.md](huazhong-shajing/SKILL.md) | 技能入口、工作流程、输入格式 |
-| [计分与决策](huazhong-shajing/references/rules-and-strategy.md) | 规则、增益与构筑经验 |
-| [操作与续接](huazhong-shajing/references/operations-and-recovery.md) | 启动权限、窗口绑定、操作和恢复步骤 |
-| [两次会话复盘](huazhong-shajing/references/run-retrospective.md) | 已观察问题、处理依据和证据边界 |
+| [SKILL.md](huazhong-yijing/SKILL.md) | 技能入口、工作流程、输入格式 |
+| [计分与决策](huazhong-yijing/references/rules-and-strategy.md) | 规则、增益与构筑经验 |
+| [操作与续接](huazhong-yijing/references/operations-and-recovery.md) | 启动权限、窗口绑定、操作和恢复步骤 |
+| [两次会话复盘](huazhong-yijing/references/run-retrospective.md) | 已观察问题、处理依据和证据边界 |
 
 ## 适用范围
 
